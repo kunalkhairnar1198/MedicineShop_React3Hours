@@ -1,16 +1,23 @@
-import { useContext } from "react";
+import {  useState } from "react";
 import Header from "./components/Header/Header";
 import MedItem from "./components/MedItem/MedItem";
 import MedForm from "./components/MedItem/Medform/MedForm";
-import { CartContext } from "./Store/cart-context";
+import Cart from "./components/Cart/Cart";
 
 function App() {
-  const cartCtx = useContext(CartContext)
+  const [isOpenCart, setIsOpenCart] = useState(false);
 
+  const toggleCart = () => {
+    setIsOpenCart((prevIsOpenCart) => !prevIsOpenCart);
+  };
+  const closeToggleCart =()=>{
+    setIsOpenCart(false)
+  }
 
   return (
     <>
-      <Header/>
+      <Header onToggleCart = {toggleCart}/>
+       {isOpenCart && <Cart onClose={closeToggleCart}/>}
       <MedForm/>
       <MedItem/>
     </>
