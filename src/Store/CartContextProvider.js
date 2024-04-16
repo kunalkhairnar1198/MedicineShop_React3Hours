@@ -7,22 +7,27 @@ const CartContextProvider = (props) => {
     const [items, setItems] = useState([])
     const [cartItem, setCartItem] = useState([])
 
-   const url ='https://crudcrud.com/api/81401a240ac1442f8559fd0d956046da/Cart'
+   const url ='https://crudcrud.com/api/299544a921a44393a3140b02a8e81621/Cart'
+   const cartUrl ='https://crudcrud.com/api/299544a921a44393a3140b02a8e81621/CartItem'
 
    useEffect(()=>{
-      const GetDataFromApi =async()=>{
-       try{
-        const response = await axios.get(`${url}`)
-        // console.log('execute',response.data)
+    const GetDataFromApi =async()=>{
+     try{
+      const response = await axios.get(`${url}`)
+      // console.log('execute',response.data)
         const data = await response.data;
-       
-          setItems(data)
-        } catch(err){
-          console.log(err)
-        }
+        setItems(data)
+
+      const cartResponse = await axios.get(`${cartUrl}`)
+       const Cartdata = await cartResponse.data
+        setCartItem(Cartdata)
+
+      } catch(err){
+        console.log(err)
       }
-      GetDataFromApi()
-    },[])
+    }
+    GetDataFromApi()
+  },[])
    
 
     const AddNewItem =(newitem)=>{

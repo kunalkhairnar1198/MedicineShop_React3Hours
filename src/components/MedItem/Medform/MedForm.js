@@ -27,7 +27,7 @@ const MedForm = () => {
         console.log(enterObj);
             // Api call when add item
             try{
-                const response = await axios.post(`https://crudcrud.com/api/81401a240ac1442f8559fd0d956046da/Cart`,
+                const response = await axios.post(`https://crudcrud.com/api/299544a921a44393a3140b02a8e81621/Cart`,
                     enterObj,
                 )
                 const addedItem = response.data

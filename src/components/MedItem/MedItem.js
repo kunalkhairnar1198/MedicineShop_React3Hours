@@ -15,9 +15,9 @@ const MedItem = () => {
         quantity : items.quantity
       }
     try{
-      const response = await axios.post(`https://crudcrud.com/api/81401a240ac1442f8559fd0d956046da/CartItem`,obj)
+      const response = await axios.post(`https://crudcrud.com/api/299544a921a44393a3140b02a8e81621/CartItem`,obj)
       const data =await response.data
-      // console.log(data)
+      console.log(data)
     }catch(err){
       console.log(err)
     }

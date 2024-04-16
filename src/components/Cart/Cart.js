@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { Button, Container, Modal, Table } from 'react-bootstrap';
 import { CartContext } from '../../Store/cart-context';
 import ModalCompo from '../UI/ModalCompo';
@@ -74,4 +74,3 @@ const Cart = (props) => {
 };
 
 export default Cart;
-    // Create table rows for each cart item
